@@ -3,13 +3,31 @@
 <head>
 <meta charset="UTF-8">
 <title>3D Model</title>
+
 <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
 <style>
-body { margin: 0; }
-model-viewer { width: 100%; height: 100vh; }
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden; /* 🚫 removes scrollbar */
+}
+
+model-viewer {
+  display: block;
+  width: 100%;
+  height: 100%; /* ✅ better than 100vh */
+}
 </style>
+
 </head>
 <body>
+
 <model-viewer
   src="./model.glb"
   camera-controls
@@ -18,7 +36,6 @@ model-viewer { width: 100%; height: 100vh; }
   camera-orbit="180deg 90deg 2.5m"
   shadow-intensity="0">
 </model-viewer>
+
 </body>
 </html>
-```
-
